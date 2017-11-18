@@ -6,14 +6,61 @@ Metadata:
         width: 430
         height: 280
       position:
-        x: 570
-        'y': 100
+        x: 590
+        'y': 130
       z: 0
+      embeds:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+        - 00967b5c-827d-4568-bca0-1b28d56a2bbe
+    99ea1797-8aa1-4271-a6df-e5a4f56fb21b:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 630
+        'y': 150
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
       embeds: []
+    00967b5c-827d-4568-bca0-1b28d56a2bbe:
+      size:
+        width: 190
+        height: 80
+      position:
+        x: 630
+        'y': 240
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+      dependson:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+    fe119076-9864-4b1a-a45b-a8ab3bc9e0bf:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      target:
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+      z: 2
 Resources:
   RancherVPC:
     Type: 'AWS::EC2::VPC'
-    Properties: {CidrBlock: '10.0.0.0/16'}
+    Properties:
+      CidrBlock: 10.0.0.0/16
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 02d851e4-1f20-44fe-970f-1a340f6107d5
+  InternetGW:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+  WebSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref RancherVPC
+      CidrBlock: 10.0.0.1/24
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+    DependsOn:
+      - InternetGW
