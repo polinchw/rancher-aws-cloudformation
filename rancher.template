@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    02d851e4-1f20-44fe-970f-1a340f6107d5:
+      size:
+        width: 430
+        height: 280
+      position:
+        x: 570
+        'y': 100
+      z: 0
+      embeds: []
+Resources:
+  RancherVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties: {CidrBlock: '10.0.0.0/16'}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 02d851e4-1f20-44fe-970f-1a340f6107d5
