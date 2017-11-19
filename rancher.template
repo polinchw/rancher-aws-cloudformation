@@ -269,6 +269,20 @@
                 "InternetGW"
             ]
         },
+        "PublicSubnetRouteTableAssociation1" : {
+          "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+          "Properties" : {
+            "SubnetId" : { "Ref" : "WebSubnet" },
+            "RouteTableId" : { "Ref" : "PublicRouteTable" }
+          }
+        },
+        "PublicSubnetRouteTableAssociation2" : {
+          "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+          "Properties" : {
+            "SubnetId" : { "Ref" : "RancherAdminSubnet" },
+            "RouteTableId" : { "Ref" : "PublicRouteTable" }
+          }
+        },
         "WebSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
             "Properties": {
