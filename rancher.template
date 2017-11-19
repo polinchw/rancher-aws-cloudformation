@@ -3,14 +3,16 @@ Metadata:
   'AWS::CloudFormation::Designer':
     02d851e4-1f20-44fe-970f-1a340f6107d5:
       size:
-        width: 430
-        height: 280
+        width: 590
+        height: 360
       position:
         x: 590
         'y': 130
       z: 0
       embeds:
         - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+        - 537ac2d3-a160-46b4-acfc-ada228486971
+        - b1078d9d-5a65-43a7-8659-bcce54968f23
         - 00967b5c-827d-4568-bca0-1b28d56a2bbe
     99ea1797-8aa1-4271-a6df-e5a4f56fb21b:
       size:
@@ -28,29 +30,107 @@ Metadata:
         height: 80
       position:
         x: 630
-        'y': 240
+        'y': 270
       z: 1
       parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
       embeds: []
       dependson:
-        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+        - b1078d9d-5a65-43a7-8659-bcce54968f23
+        - 537ac2d3-a160-46b4-acfc-ada228486971
     fe119076-9864-4b1a-a45b-a8ab3bc9e0bf:
       source:
         id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
       target:
         id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
       z: 2
+    b1078d9d-5a65-43a7-8659-bcce54968f23:
+      size:
+        width: 140
+        height: 90
+      position:
+        x: 920
+        'y': 160
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+      dependson:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+    e5a1794d-e5b6-4544-acd1-4ffaf47ba048:
+      source:
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+      target:
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+      z: 2
+    8e2c713d-fb0a-4173-abce-50372c05c035:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      target:
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+      z: 3
+    537ac2d3-a160-46b4-acfc-ada228486971:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1020
+        'y': 290
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+    e933f949-1211-4354-8875-c175a8752483:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 2
+    b3f91c94-1763-4227-9cf7-d4a04eab99a7:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    fd09aacc-f8a9-4bf1-aecd-d599a15c50f9:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    57fe7d40-fe3a-47d6-85e5-624620d0d0c6:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    a390da28-61a6-44dd-8570-fa5101cf162a:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
 Resources:
   RancherVPC:
     Type: 'AWS::EC2::VPC'
     Properties:
       CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'false'
+      EnableDnsHostnames: 'false'
+      InstanceTenancy: dedicated
+      Tags:
+        - Key: Name
+          Value: RancherCloudFormation
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 02d851e4-1f20-44fe-970f-1a340f6107d5
   InternetGW:
     Type: 'AWS::EC2::InternetGateway'
-    Properties: {}
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
@@ -59,8 +139,32 @@ Resources:
     Properties:
       VpcId: !Ref RancherVPC
       CidrBlock: 10.0.0.1/24
+      Tags:
+        - Key: Name
+          Value: WebSubnet
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
     DependsOn:
+      - PublicRouteTable
+      - WebSecurityGroup
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref RancherVPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+    DependsOn:
       - InternetGW
+  WebSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref RancherVPC
+      GroupDescription: 'Allows traffic from the public internet.'
+      Tags:
+        - Key: Name
+          Value: WebSecurityGroup
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
