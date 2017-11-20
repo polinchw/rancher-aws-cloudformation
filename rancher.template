@@ -178,6 +178,16 @@ Metadata:
       target:
         id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
       z: 2
+Parameters:
+    KeyName:
+      ConstraintDescription: must be the name of an existing EC2 KeyPair.
+      Description: Name of an existing EC2 KeyPair to enable SSH access to the instances
+      Type: AWS::EC2::KeyPair::KeyName
+    InstanceType:
+      AllowedValues:
+      - t1.micro
+      - t2.nano
+      - t2.micro
 Resources:
   RancherVPC:
     Type: 'AWS::EC2::VPC'
