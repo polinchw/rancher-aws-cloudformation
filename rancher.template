@@ -201,12 +201,17 @@ Resources:
     Type: 'AWS::EC2::VPC'
     Properties:
       CidrBlock: 10.0.0.0/16
-      EnableDnsSupport: 'false'
-      EnableDnsHostnames: 'false'
-      InstanceTenancy: dedicated
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      InstanceTenancy: default
       Tags:
         - Key: Name
           Value: RancherCloudFormation
+        - Key: "Application"
+          Value:
+            Ref: "AWS::StackName"
+        - Key: "Network"
+          Value: "Public"
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 02d851e4-1f20-44fe-970f-1a340f6107d5
@@ -308,6 +313,10 @@ Resources:
         - IpProtocol: tcp
           FromPort: '443'
           ToPort: '443'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
           CidrIp: 0.0.0.0/0
     Metadata:
       'AWS::CloudFormation::Designer':
