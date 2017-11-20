@@ -381,6 +381,12 @@
                 "InstanceType": {
                     "Ref": "InstanceType"
                 },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "RancherAdmin"
+                    }
+                ],
                 "KeyName": {
                     "Ref": "KeyName"
                 },
