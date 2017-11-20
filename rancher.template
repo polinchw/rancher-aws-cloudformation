@@ -381,18 +381,17 @@
                 "InstanceType": {
                     "Ref": "InstanceType"
                 },
-                "SecurityGroupIds": [
-                    {
-                        "Ref": "RancherAdminSecurityGroup"
-                    }
-                ],
                 "KeyName": {
                     "Ref": "KeyName"
                 },
                 "ImageId": "ami-ca71f4b0",
-                "SubnetId": {
-                    "Ref": "RancherAdminSubnet"
-                }
+                "NetworkInterfaces" : [{
+                 "AssociatePublicIpAddress" : "True",
+                 "DeleteOnTermination" : "True",
+                 "SubnetId" : { "Ref" : "RancherAdminSubnet" },
+                 "DeviceIndex" : "0",
+                 "GroupSet" : [ { "Ref" : "RancherAdminSecurityGroup" } ]
+                 }]
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
