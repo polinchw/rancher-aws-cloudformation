@@ -1,379 +1,309 @@
-{
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Metadata": {
-        "AWS::CloudFormation::Designer": {
-            "02d851e4-1f20-44fe-970f-1a340f6107d5": {
-                "size": {
-                    "width": 590,
-                    "height": 360
-                },
-                "position": {
-                    "x": 590,
-                    "y": 130
-                },
-                "z": 0,
-                "embeds": [
-                    "99ea1797-8aa1-4271-a6df-e5a4f56fb21b",
-                    "e9387ad6-af3c-433a-86c9-0cb078dc5333",
-                    "1144dc09-8bf3-4d80-adfd-800ccd417da3",
-                    "537ac2d3-a160-46b4-acfc-ada228486971",
-                    "b1078d9d-5a65-43a7-8659-bcce54968f23",
-                    "00967b5c-827d-4568-bca0-1b28d56a2bbe"
-                ]
-            },
-            "99ea1797-8aa1-4271-a6df-e5a4f56fb21b": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 630,
-                    "y": 150
-                },
-                "z": 1,
-                "parent": "02d851e4-1f20-44fe-970f-1a340f6107d5",
-                "embeds": []
-            },
-            "00967b5c-827d-4568-bca0-1b28d56a2bbe": {
-                "size": {
-                    "width": 190,
-                    "height": 80
-                },
-                "position": {
-                    "x": 630,
-                    "y": 270
-                },
-                "z": 1,
-                "parent": "02d851e4-1f20-44fe-970f-1a340f6107d5",
-                "embeds": [],
-                "dependson": [
-                    "b1078d9d-5a65-43a7-8659-bcce54968f23",
-                    "537ac2d3-a160-46b4-acfc-ada228486971"
-                ]
-            },
-            "fe119076-9864-4b1a-a45b-a8ab3bc9e0bf": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe"
-                },
-                "target": {
-                    "id": "99ea1797-8aa1-4271-a6df-e5a4f56fb21b"
-                },
-                "z": 2
-            },
-            "b1078d9d-5a65-43a7-8659-bcce54968f23": {
-                "size": {
-                    "width": 140,
-                    "height": 90
-                },
-                "position": {
-                    "x": 920,
-                    "y": 160
-                },
-                "z": 1,
-                "parent": "02d851e4-1f20-44fe-970f-1a340f6107d5",
-                "embeds": [],
-                "dependson": [
-                    "99ea1797-8aa1-4271-a6df-e5a4f56fb21b"
-                ]
-            },
-            "e5a1794d-e5b6-4544-acd1-4ffaf47ba048": {
-                "source": {
-                    "id": "b1078d9d-5a65-43a7-8659-bcce54968f23"
-                },
-                "target": {
-                    "id": "99ea1797-8aa1-4271-a6df-e5a4f56fb21b"
-                },
-                "z": 2
-            },
-            "8e2c713d-fb0a-4173-abce-50372c05c035": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe"
-                },
-                "target": {
-                    "id": "b1078d9d-5a65-43a7-8659-bcce54968f23"
-                },
-                "z": 3
-            },
-            "537ac2d3-a160-46b4-acfc-ada228486971": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 1020,
-                    "y": 290
-                },
-                "z": 1,
-                "parent": "02d851e4-1f20-44fe-970f-1a340f6107d5",
-                "embeds": []
-            },
-            "e933f949-1211-4354-8875-c175a8752483": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe"
-                },
-                "target": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                },
-                "z": 2
-            },
-            "b3f91c94-1763-4227-9cf7-d4a04eab99a7": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe",
-                    "selector": "g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     ",
-                    "port": "AWS::DependencyLink-*"
-                },
-                "target": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                },
-                "z": 3
-            },
-            "fd09aacc-f8a9-4bf1-aecd-d599a15c50f9": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe",
-                    "selector": "g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     ",
-                    "port": "AWS::DependencyLink-*"
-                },
-                "target": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                },
-                "z": 3
-            },
-            "57fe7d40-fe3a-47d6-85e5-624620d0d0c6": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe",
-                    "selector": "g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     ",
-                    "port": "AWS::DependencyLink-*"
-                },
-                "target": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                },
-                "z": 3
-            },
-            "a390da28-61a6-44dd-8570-fa5101cf162a": {
-                "source": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe",
-                    "selector": "g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     ",
-                    "port": "AWS::DependencyLink-*"
-                },
-                "target": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                },
-                "z": 3
-            },
-            "1144dc09-8bf3-4d80-adfd-800ccd417da3": {
-                "size": {
-                    "width": 190,
-                    "height": 80
-                },
-                "position": {
-                    "x": 630,
-                    "y": 370
-                },
-                "z": 1,
-                "parent": "02d851e4-1f20-44fe-970f-1a340f6107d5",
-                "embeds": [],
-                "dependson": [
-                    "e9387ad6-af3c-433a-86c9-0cb078dc5333"
-                ]
-            },
-            "e9387ad6-af3c-433a-86c9-0cb078dc5333": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 1020,
-                    "y": 350
-                },
-                "z": 1,
-                "parent": "02d851e4-1f20-44fe-970f-1a340f6107d5",
-                "embeds": []
-            },
-            "34ad0c88-0fe7-4876-a875-f4265482d117": {
-                "source": {
-                    "id": "1144dc09-8bf3-4d80-adfd-800ccd417da3"
-                },
-                "target": {
-                    "id": "e9387ad6-af3c-433a-86c9-0cb078dc5333"
-                },
-                "z": 2
-            }
-        }
-    },
-    "Resources": {
-        "RancherVPC": {
-            "Type": "AWS::EC2::VPC",
-            "Properties": {
-                "CidrBlock": "10.0.0.0/16",
-                "EnableDnsSupport": "false",
-                "EnableDnsHostnames": "false",
-                "InstanceTenancy": "dedicated",
-                "Tags": [
-                    {
-                        "Key": "Name",
-                        "Value": "RancherCloudFormation"
-                    }
-                ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "02d851e4-1f20-44fe-970f-1a340f6107d5"
-                }
-            }
-        },
-        "InternetGW": {
-            "Type": "AWS::EC2::InternetGateway",
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "99ea1797-8aa1-4271-a6df-e5a4f56fb21b"
-                }
-            }
-        },
-        "WebSubnet": {
-            "Type": "AWS::EC2::Subnet",
-            "Properties": {
-                "VpcId": {
-                    "Ref": "RancherVPC"
-                },
-                "CidrBlock": "10.0.0.0/24",
-                "Tags": [
-                    {
-                        "Key": "Name",
-                        "Value": "WebSubnet"
-                    }
-                ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe"
-                }
-            },
-            "DependsOn": [
-                "PublicRouteTable",
-                "WebSecurityGroup"
-            ]
-        },
-        "PublicRouteTable": {
-            "Type": "AWS::EC2::RouteTable",
-            "Properties": {
-                "VpcId": {
-                    "Ref": "RancherVPC"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "b1078d9d-5a65-43a7-8659-bcce54968f23"
-                }
-            },
-            "DependsOn": [
-                "InternetGW"
-            ]
-        },
-        "PublicSubnetRouteTableAssociation1" : {
-          "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-          "Properties" : {
-            "SubnetId" : { "Ref" : "WebSubnet" },
-            "RouteTableId" : { "Ref" : "PublicRouteTable" }
-          }
-        },
-        "PublicSubnetRouteTableAssociation2" : {
-          "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-          "Properties" : {
-            "SubnetId" : { "Ref" : "RancherAdminSubnet" },
-            "RouteTableId" : { "Ref" : "PublicRouteTable" }
-          }
-        },
-        "WebSecurityGroup": {
-            "Type": "AWS::EC2::SecurityGroup",
-            "Properties": {
-                "VpcId": {
-                    "Ref": "RancherVPC"
-                },
-                "GroupDescription": "Allows traffic from the public internet.",
-                "Tags": [
-                    {
-                        "Key": "Name",
-                        "Value": "WebSecurityGroup"
-                    }
-                ],
-                "SecurityGroupIngress": [
-                    {
-                        "IpProtocol": "tcp",
-                        "FromPort": "80",
-                        "ToPort": "80",
-                        "CidrIp": "0.0.0.0/0"
-                    },
-                    {
-                        "IpProtocol": "tcp",
-                        "FromPort": "443",
-                        "ToPort": "443",
-                        "CidrIp": "0.0.0.0/0"
-                    }
-                ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                }
-            }
-        },
-        "RancherAdminSubnet": {
-            "Type": "AWS::EC2::Subnet",
-            "Properties": {
-                "VpcId": {
-                    "Ref": "RancherVPC"
-                },
-              "CidrBlock": "10.0.1.0/24",
-              "Tags": [
-                {
-                  "Key": "Name",
-                  "Value": "RancherAdminSubnet"
-                }
-              ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "1144dc09-8bf3-4d80-adfd-800ccd417da3"
-                }
-            },
-            "DependsOn": [
-                "RancherAdminSecurityGroup"
-            ]
-        },
-        "RancherAdminSecurityGroup": {
-            "Type": "AWS::EC2::SecurityGroup",
-            "Properties": {
-                "VpcId": {
-                    "Ref": "RancherVPC"
-                },
-              "GroupDescription": "Allows traffic from the public internet to the Rancher GUI",
-              "Tags": [
-                {
-                  "Key": "Name",
-                  "Value": "RancherSecurityGroup"
-                }
-              ],
-              "SecurityGroupIngress": [
-                {
-                  "IpProtocol": "tcp",
-                  "FromPort": "8080",
-                  "ToPort": "8080",
-                  "CidrIp": "0.0.0.0/0"
-                },
-                {
-                  "IpProtocol": "tcp",
-                  "FromPort": "443",
-                  "ToPort": "443",
-                  "CidrIp": "0.0.0.0/0"
-                }
-              ]
-
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "e9387ad6-af3c-433a-86c9-0cb078dc5333"
-                }
-            }
-        }
-    }
-}
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    02d851e4-1f20-44fe-970f-1a340f6107d5:
+      size:
+        width: 750
+        height: 430
+      position:
+        x: 430
+        'y': 130
+      z: 0
+      embeds:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+        - e9387ad6-af3c-433a-86c9-0cb078dc5333
+        - 1144dc09-8bf3-4d80-adfd-800ccd417da3
+        - 537ac2d3-a160-46b4-acfc-ada228486971
+        - b1078d9d-5a65-43a7-8659-bcce54968f23
+        - 00967b5c-827d-4568-bca0-1b28d56a2bbe
+    99ea1797-8aa1-4271-a6df-e5a4f56fb21b:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 490
+        'y': 160
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+    00967b5c-827d-4568-bca0-1b28d56a2bbe:
+      size:
+        width: 190
+        height: 80
+      position:
+        x: 480
+        'y': 270
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+      dependson:
+        - b1078d9d-5a65-43a7-8659-bcce54968f23
+        - 537ac2d3-a160-46b4-acfc-ada228486971
+    fe119076-9864-4b1a-a45b-a8ab3bc9e0bf:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      target:
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+      z: 2
+    b1078d9d-5a65-43a7-8659-bcce54968f23:
+      size:
+        width: 140
+        height: 90
+      position:
+        x: 930
+        'y': 170
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds:
+        - 717cfe05-6547-40a5-882b-c74b4c8f6f0a
+      dependson:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+    e5a1794d-e5b6-4544-acd1-4ffaf47ba048:
+      source:
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+      target:
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+      z: 2
+    8e2c713d-fb0a-4173-abce-50372c05c035:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      target:
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+      z: 3
+    537ac2d3-a160-46b4-acfc-ada228486971:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1020
+        'y': 290
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+    e933f949-1211-4354-8875-c175a8752483:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 2
+    b3f91c94-1763-4227-9cf7-d4a04eab99a7:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    fd09aacc-f8a9-4bf1-aecd-d599a15c50f9:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    57fe7d40-fe3a-47d6-85e5-624620d0d0c6:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    a390da28-61a6-44dd-8570-fa5101cf162a:
+      source:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+        selector: 'g:nth-child(1) g:nth-child(5) g:nth-child(1) circle:nth-child(1)     '
+        port: 'AWS::DependencyLink-*'
+      target:
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+      z: 3
+    1144dc09-8bf3-4d80-adfd-800ccd417da3:
+      size:
+        width: 190
+        height: 80
+      position:
+        x: 480
+        'y': 380
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+      dependson:
+        - e9387ad6-af3c-433a-86c9-0cb078dc5333
+    e9387ad6-af3c-433a-86c9-0cb078dc5333:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1020
+        'y': 370
+      z: 1
+      parent: 02d851e4-1f20-44fe-970f-1a340f6107d5
+      embeds: []
+    34ad0c88-0fe7-4876-a875-f4265482d117:
+      source:
+        id: 1144dc09-8bf3-4d80-adfd-800ccd417da3
+      target:
+        id: e9387ad6-af3c-433a-86c9-0cb078dc5333
+      z: 2
+    de83b63b-2ca8-44b0-9bfe-67a91eb47d74:
+      source:
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+      target:
+        id: 1144dc09-8bf3-4d80-adfd-800ccd417da3
+      z: 1
+    5a319605-ab45-4917-a7a8-64804f3e44cc:
+      source:
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+      target:
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+      z: 1
+    717cfe05-6547-40a5-882b-c74b4c8f6f0a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 760
+        'y': 190
+      z: 1
+      parent: b1078d9d-5a65-43a7-8659-bcce54968f23
+      embeds: []
+      references:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+      dependson:
+        - 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+    c3f1de15-498c-4404-8114-564ff92bbcf2:
+      source:
+        id: 717cfe05-6547-40a5-882b-c74b4c8f6f0a
+      target:
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+      z: 2
+Resources:
+  RancherVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'false'
+      EnableDnsHostnames: 'false'
+      InstanceTenancy: dedicated
+      Tags:
+        - Key: Name
+          Value: RancherCloudFormation
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 02d851e4-1f20-44fe-970f-1a340f6107d5
+  InternetGW:
+    Type: 'AWS::EC2::InternetGateway'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 99ea1797-8aa1-4271-a6df-e5a4f56fb21b
+  GatewayToInternet:
+      Type: "AWS::EC2::VPCGatewayAttachment"
+      Properties:
+        VpcId:
+          Ref: "RancherVPC"
+        InternetGatewayId:
+          Ref: "InternetGW"        
+  WebSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref RancherVPC
+      CidrBlock: 10.0.0.0/24
+      Tags:
+        - Key: Name
+          Value: WebSubnet
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 00967b5c-827d-4568-bca0-1b28d56a2bbe
+    DependsOn:
+      - PublicRouteTable
+      - WebSecurityGroup
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref RancherVPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b1078d9d-5a65-43a7-8659-bcce54968f23
+  PublicSubnetRouteTableAssociation1:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref WebSubnet
+      RouteTableId: !Ref PublicRouteTable
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 5a319605-ab45-4917-a7a8-64804f3e44cc
+  PublicSubnetRouteTableAssociation2:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref RancherAdminSubnet
+      RouteTableId: !Ref PublicRouteTable
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: de83b63b-2ca8-44b0-9bfe-67a91eb47d74
+  WebSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref RancherVPC
+      GroupDescription: Allows traffic from the public internet.
+      Tags:
+        - Key: Name
+          Value: WebSecurityGroup
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '443'
+          ToPort: '443'
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 537ac2d3-a160-46b4-acfc-ada228486971
+  RancherAdminSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref RancherVPC
+      CidrBlock: 10.0.1.0/24
+      Tags:
+        - Key: Name
+          Value: RancherAdminSubnet
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 1144dc09-8bf3-4d80-adfd-800ccd417da3
+    DependsOn:
+      - RancherAdminSecurityGroup
+  RancherAdminSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref RancherVPC
+      GroupDescription: Allows traffic from the public internet to the Rancher GUI
+      Tags:
+        - Key: Name
+          Value: RancherSecurityGroup
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '8080'
+          ToPort: '8080'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '443'
+          ToPort: '443'
+          CidrIp: 0.0.0.0/0
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: e9387ad6-af3c-433a-86c9-0cb078dc5333
+  PublicRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId:
+        Ref: PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId:
+        Ref: InternetGW
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 717cfe05-6547-40a5-882b-c74b4c8f6f0a
+    DependsOn:
+      - InternetGW
