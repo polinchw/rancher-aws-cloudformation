@@ -12,9 +12,9 @@ Template for creating an AWS VPC environment to run Rancher on.
 - Security Groups
 
 ## Prerequisites
-- AWS key pair to ssh into the Rancher Server
+- AWS key pair to ssh into the Rancher Server.
 
 ## Cloud Formation
-- Feed the rancher.template into a new AWS Cloud Formation
+- Feed the rancher.template into a new AWS Cloud Formation stack.
 https://console.aws.amazon.com/cloudformation/
 
