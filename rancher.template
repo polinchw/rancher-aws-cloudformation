@@ -390,6 +390,18 @@
                 "KeyName": {
                     "Ref": "KeyName"
                 },
+               "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+                     "#!/bin/bash -xe\n",
+                     "sudo mkdir -p /usr/local/etc/nginx/ssl\n",
+                     "# Create the SSH keys \n",
+                     "cd /usr/local/etc/nginx/ssl\n",
+                     "sudo openssl req -x509 -nodes -subj \"/C=US/ST=GA/L=Atlanta/O=BPE/CN=rancher-dev.bpe.com\" -new -newkey rsa:4096 -keyout rancher.key -out rancher.crt -days 365\n",
+                     "cd /home/ubuntu\n",
+                     "git clone https://github.com/polinchw/rancher-ssl.git\n",
+                     "cd /home/ubuntu/rancher-ssl\n",
+                     "docker-compose build\n",
+                     "docker-compose up -d\n"
+                 ]]}},
                 "ImageId": "ami-ca71f4b0",
                 "NetworkInterfaces" : [{
                  "AssociatePublicIpAddress" : "True",
@@ -397,16 +409,7 @@
                  "SubnetId" : { "Ref" : "RancherAdminSubnet" },
                  "DeviceIndex" : "0",
                  "GroupSet" : [ { "Ref" : "RancherAdminSecurityGroup" } ]
-                 }],
-                 "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
-                     "#!/bin/bash -xe\n",
-                     "sudo mkdir -p /usr/local/etc/nginx/ssl\n",
-
-                     "# Install the files and packages from the metadata\n",
-                     "cd\n",
-                     "git clone https://github.com/polinchw/rancher-ssl.git\n"
-
-                 ]]}}
+                 }]
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
