@@ -397,22 +397,22 @@
                  "SubnetId" : { "Ref" : "RancherAdminSubnet" },
                  "DeviceIndex" : "0",
                  "GroupSet" : [ { "Ref" : "RancherAdminSecurityGroup" } ]
-                 }]
+                 }],
+                 "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+                     "#!/bin/bash -xe\n",
+                     "sudo mkdir -p /usr/local/etc/nginx/ssl\n",
+
+                     "# Install the files and packages from the metadata\n",
+                     "cd\n",
+                     "git clone https://github.com/polinchw/rancher-ssl.git\n"
+
+                 ]]}}
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
                     "id": "48138d59-b61c-4080-9d6e-65fe2eeae65b"
                 }
-            },
-            "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
-                 "#!/bin/bash -xe\n",
-                 "sudo mkdir -p /usr/local/etc/nginx/ssl\n",
-
-                 "# Install the files and packages from the metadata\n",
-                 "cd\n",
-                 "git clone https://github.com/polinchw/rancher-ssl.git\n"
-
-            ]]}}
+            }
         },
         "InternetGW": {
             "Type": "AWS::EC2::InternetGateway",
