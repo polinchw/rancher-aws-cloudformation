@@ -399,6 +399,7 @@
                      "cd /home/ubuntu\n",
                      "git clone https://github.com/polinchw/rancher-ssl.git\n",
                      "cd /home/ubuntu/rancher-ssl\n",
+                     "git checkout preview\n",
                      "docker-compose build\n",
                      "docker-compose up -d\n"
                  ]]}},
