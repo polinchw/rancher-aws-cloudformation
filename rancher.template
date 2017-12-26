@@ -368,11 +368,53 @@
                         "Value": "Public"
                     }
                 ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "02d851e4-1f20-44fe-970f-1a340f6107d5"
+            }
+        },
+        "NATGateway1EIP" : {
+            "Type" : "AWS::EC2::EIP",
+            "Properties" : {
+                "Domain" : "RancherVPC"
+            }
+        },
+        "NATGateway1" : {
+            "Type" : "AWS::EC2::NatGateway",
+            "DependsOn" : "GatewayToInternet",
+            "Properties" : {
+                "AllocationId" : {
+                    "Fn::GetAtt" : [
+                        "NATGateway1EIP",
+                        "AllocationId"
+                    ]
+                },
+                "SubnetId" : {
+                    "Ref" : "WebSubnet"
                 }
+            }
+        },
+        "PrivateRoute1" : {
+            "Type" : "AWS::EC2::Route",
+            "Properties" : {
+                "RouteTableId" : {
+                    "Ref" : "PrivateRouteTable1"
+                },
+                "DestinationCidrBlock" : "0.0.0.0/0",
+                "NatGatewayId" : {
+                    "Ref" : "NATGateway1"
+                }
+            }
+        },
+        "PrivateRouteTable1": {
+            "Type": "AWS::EC2::RouteTable",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "RancherVPC"
+                },
+                "Tags": [
+                 {
+                  "Key": "Name",
+                  "Value": "Private Route Table"
+                 }
+                 ]
             }
         },
         "RancherAdminEC2": {
@@ -410,20 +452,18 @@
                  "DeviceIndex" : "0",
                  "GroupSet" : [ { "Ref" : "RancherAdminSecurityGroup" } ]
                  }]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "48138d59-b61c-4080-9d6e-65fe2eeae65b"
-                }
             }
         },
         "InternetGW": {
             "Type": "AWS::EC2::InternetGateway",
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "99ea1797-8aa1-4271-a6df-e5a4f56fb21b"
-                }
-            }
+           "Properties": {
+              "Tags": [
+               {
+                 "Key": "Name",
+                 "Value": "Internet Gateway"
+               }
+               ]
+           }
         },
         "GatewayToInternet": {
             "Type": "AWS::EC2::VPCGatewayAttachment",
@@ -433,11 +473,6 @@
                 },
                 "InternetGatewayId": {
                     "Ref": "InternetGW"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "52e4bdf5-0d39-485e-affe-21c397226310"
                 }
             }
         },
@@ -455,11 +490,6 @@
                     }
                 ]
             },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "00967b5c-827d-4568-bca0-1b28d56a2bbe"
-                }
-            },
             "DependsOn": [
                 "PublicRouteTable",
                 "WebSecurityGroup"
@@ -470,12 +500,13 @@
             "Properties": {
                 "VpcId": {
                     "Ref": "RancherVPC"
+                },
+              "Tags": [
+                {
+                  "Key": "Name",
+                  "Value": "Public Route Table"
                 }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "b1078d9d-5a65-43a7-8659-bcce54968f23"
-                }
+              ]
             }
         },
         "PublicSubnetRouteTableAssociation1": {
@@ -486,11 +517,6 @@
                 },
                 "RouteTableId": {
                     "Ref": "PublicRouteTable"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "5a319605-ab45-4917-a7a8-64804f3e44cc"
                 }
             }
         },
@@ -503,12 +529,18 @@
                 "RouteTableId": {
                     "Ref": "PublicRouteTable"
                 }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "de83b63b-2ca8-44b0-9bfe-67a91eb47d74"
-                }
             }
+        },
+       "PrivateSubnetRouteTableAssociation1": {
+         "Type": "AWS::EC2::SubnetRouteTableAssociation",
+         "Properties": {
+          "SubnetId": {
+            "Ref": "AppSubnet"
+          },
+          "RouteTableId": {
+            "Ref": "PrivateRouteTable1"
+          }
+         }
         },
         "WebSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
@@ -573,11 +605,6 @@
                         "CidrIp": "10.0.0.0/16"
                     }
                 ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "537ac2d3-a160-46b4-acfc-ada228486971"
-                }
             }
         },
         "RancherAdminSubnet": {
@@ -594,16 +621,30 @@
                     }
                 ]
             },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "1144dc09-8bf3-4d80-adfd-800ccd417da3"
-                }
-            },
             "DependsOn": [
                 "RancherAdminSecurityGroup"
             ]
         },
-        "RancherAdminSecurityGroup": {
+      "AppSubnet": {
+        "Type": "AWS::EC2::Subnet",
+        "Properties": {
+          "VpcId": {
+            "Ref": "RancherVPC"
+          },
+          "CidrBlock": "10.0.2.0/24",
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "AppSubnet"
+            }
+          ]
+        },
+        "DependsOn": [
+          "AppSecurityGroup",
+          "PrivateRouteTable1"
+        ]
+      },
+      "RancherAdminSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
             "Properties": {
                 "VpcId": {
@@ -654,13 +695,37 @@
                         "CidrIp": "10.0.0.0/16"
                     }
                 ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "e9387ad6-af3c-433a-86c9-0cb078dc5333"
-                }
             }
         },
+      "AppSecurityGroup": {
+        "Type": "AWS::EC2::SecurityGroup",
+        "Properties": {
+          "VpcId": {
+            "Ref": "RancherVPC"
+          },
+          "GroupDescription": "Allows traffic from the web subnet",
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "AppSecurityGroup"
+            }
+          ],
+          "SecurityGroupIngress": [
+            {
+              "IpProtocol": "tcp",
+              "FromPort": "8000",
+              "ToPort": "9000",
+              "CidrIp": "10.0.0.0/24"
+            },
+            {
+              "IpProtocol": "tcp",
+              "FromPort": "22",
+              "ToPort": "22",
+              "CidrIp": "0.0.0.0/0"
+            }
+          ]
+        }
+      },
         "PublicRoute": {
             "Type": "AWS::EC2::Route",
             "Properties": {
@@ -670,11 +735,6 @@
                 "DestinationCidrBlock": "0.0.0.0/0",
                 "GatewayId": {
                     "Ref": "InternetGW"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "717cfe05-6547-40a5-882b-c74b4c8f6f0a"
                 }
             },
             "DependsOn": [
