@@ -542,6 +542,28 @@
           }
          }
         },
+       "PrivateSubnetRouteTableAssociation2": {
+        "Type": "AWS::EC2::SubnetRouteTableAssociation",
+        "Properties": {
+          "SubnetId": {
+            "Ref": "DBSubnet1"
+          },
+          "RouteTableId": {
+            "Ref": "PrivateRouteTable1"
+          }
+        }
+       },
+       "PrivateSubnetRouteTableAssociation3": {
+        "Type": "AWS::EC2::SubnetRouteTableAssociation",
+        "Properties": {
+          "SubnetId": {
+            "Ref": "DBSubnet2"
+          },
+          "RouteTableId": {
+            "Ref": "PrivateRouteTable1"
+          }
+        }
+       },
         "WebSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
             "Properties": {
@@ -644,6 +666,44 @@
           "PrivateRouteTable1"
         ]
       },
+      "DBSubnet1": {
+        "Type": "AWS::EC2::Subnet",
+        "Properties": {
+          "VpcId": {
+            "Ref": "RancherVPC"
+          },
+          "CidrBlock": "10.0.3.0/24",
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "DBSubnet1"
+            }
+          ]
+        },
+        "DependsOn": [
+          "DBSecurityGroup",
+          "PrivateRouteTable1"
+        ]
+      },
+      "DBSubnet2": {
+        "Type": "AWS::EC2::Subnet",
+        "Properties": {
+          "VpcId": {
+            "Ref": "RancherVPC"
+          },
+          "CidrBlock": "10.0.4.0/24",
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "DBSubnet2"
+            }
+          ]
+        },
+        "DependsOn": [
+          "DBSecurityGroup",
+          "PrivateRouteTable1"
+        ]
+      },
       "RancherAdminSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
             "Properties": {
@@ -738,6 +798,29 @@
           ]
         }
       },
+      "DBSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "RancherVPC"
+                },
+                "GroupDescription": "Allows traffic from the app subnet",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "DBSecurityGroup"
+                    }
+                ],
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "3306",
+                        "ToPort": "3306",
+                        "CidrIp": "10.0.2.0/24"
+                    }
+                ]
+            }
+        },
         "PublicRoute": {
             "Type": "AWS::EC2::Route",
             "Properties": {
