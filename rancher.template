@@ -496,6 +496,26 @@
                 "WebSecurityGroup"
             ]
         },
+        "CISubnet": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "RancherVPC"
+                },
+                "AvailabilityZone" : "us-east-1c",
+                "CidrBlock": "10.0.5.0/24",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "CISubnet"
+                    }
+                ]
+            },
+            "DependsOn": [
+                "PublicRouteTable",
+                "WebSecurityGroup"
+            ]
+        },
         "PublicRouteTable": {
             "Type": "AWS::EC2::RouteTable",
             "Properties": {
@@ -526,6 +546,17 @@
             "Properties": {
                 "SubnetId": {
                     "Ref": "RancherAdminSubnet"
+                },
+                "RouteTableId": {
+                    "Ref": "PublicRouteTable"
+                }
+            }
+        },
+        "PublicSubnetRouteTableAssociation3": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "CISubnet"
                 },
                 "RouteTableId": {
                     "Ref": "PublicRouteTable"
