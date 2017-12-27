@@ -817,6 +817,24 @@
                         "FromPort": "3306",
                         "ToPort": "3306",
                         "CidrIp": "10.0.2.0/24"
+                    },
+                    {
+                      "IpProtocol": "tcp",
+                      "FromPort": "22",
+                      "ToPort": "22",
+                      "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "4500",
+                      "ToPort": "4500",
+                      "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "5000",
+                      "ToPort": "5000",
+                      "CidrIp": "10.0.0.0/16"
                     }
                 ]
             }
