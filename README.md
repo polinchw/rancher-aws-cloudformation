@@ -23,11 +23,7 @@ Template for creating an AWS VPC environment to run Rancher on.
     - CIDR: 10.0.4.0/24
     - Check the 'Use private IP' box in the Rancher GUI when creating a host in this subnet.
     - Run your databases instances on this subnet.  It's on a private subnet with access only
-      allowed in from the app subnet.
-- CI Subnets
-    - CIDR: 10.0.5.0/24
-    - Run your CI servers like Jenkins or Team City on this subnet.  Great if you want to run
-      dev and and ci servers on the same VPC.       
+      allowed in from the app subnet.   
 - Internet Gateway
 - NAT
 - Security Groups
