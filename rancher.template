@@ -333,6 +333,18 @@
                         "FromPort": "9300",
                         "ToPort": "9300",
                         "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": "500",
+                        "ToPort": "500",
+                        "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": "4500",
+                        "ToPort": "4500",
+                        "CidrIp": "10.0.0.0/16"
                     }
                 ]
             }
@@ -494,6 +506,18 @@
               "FromPort": "22",
               "ToPort": "22",
               "CidrIp": "10.0.1.0/24"
+            },
+            {
+              "IpProtocol": "udp",
+              "FromPort": "500",
+              "ToPort": "500",
+              "CidrIp": "10.0.0.0/16"
+            },
+            {
+              "IpProtocol": "udp",
+              "FromPort": "4500",
+              "ToPort": "4500",
+              "CidrIp": "10.0.0.0/16"
             }
           ]
         }
@@ -523,6 +547,18 @@
                       "FromPort": "22",
                       "ToPort": "22",
                       "CidrIp": "10.0.1.0/24"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "500",
+                      "ToPort": "500",
+                      "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "4500",
+                      "ToPort": "4500",
+                      "CidrIp": "10.0.0.0/16"
                     }
                 ]
             }
