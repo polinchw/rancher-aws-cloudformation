@@ -177,7 +177,10 @@
                  "DeviceIndex" : "0",
                  "GroupSet" : [ { "Ref" : "RancherAdminSecurityGroup" } ]
                  }]
-            }
+            },
+            "DependsOn": [
+              "WebSubnet"
+            ]
         },
         "InternetGW": {
             "Type": "AWS::EC2::InternetGateway",
