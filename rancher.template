@@ -581,6 +581,14 @@
             "DependsOn": [
                 "InternetGW"
             ]
+        },
+      "RancherDBSubnetGroup" : {
+        "Type" : "AWS::RDS::DBSubnetGroup",
+        "Properties" : {
+          "DBSubnetGroupDescription" : "rancher db subnet group",
+          "SubnetIds" : [ { "Ref" : "DBSubnet1" }, { "Ref" : "DBSubnet2" } ],
+          "Tags" : [ {"Key" : "foo", "Value" : "bar"} ]
         }
+      }
     }
 }
