@@ -349,6 +349,12 @@
                         "FromPort": "4500",
                         "ToPort": "4500",
                         "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "4789",
+                      "ToPort": "4789",
+                      "CidrIp": "10.0.0.0/16"
                     }
                 ]
             }
@@ -481,6 +487,12 @@
                         "FromPort": "4500",
                         "ToPort": "4500",
                         "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "4789",
+                      "ToPort": "4789",
+                      "CidrIp": "10.0.0.0/16"
                     }
                 ]
             }
@@ -521,6 +533,12 @@
               "IpProtocol": "udp",
               "FromPort": "4500",
               "ToPort": "4500",
+              "CidrIp": "10.0.0.0/16"
+            },
+            {
+              "IpProtocol": "udp",
+              "FromPort": "4789",
+              "ToPort": "4789",
               "CidrIp": "10.0.0.0/16"
             }
           ]
@@ -563,6 +581,12 @@
                       "FromPort": "4500",
                       "ToPort": "4500",
                       "CidrIp": "10.0.0.0/16"
+                    },
+                    {
+                      "IpProtocol": "udp",
+                      "FromPort": "4789",
+                      "ToPort": "4789",
+                       "CidrIp": "10.0.0.0/16"
                     }
                 ]
             }
