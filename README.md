@@ -3,6 +3,7 @@ Template for creating an AWS VPC environment to run Rancher on.
 
 ## Prerequisites
 - AWS key pair to ssh into the Rancher Server.
+- AWS IAM user with AdministratorAccess (used by Rancher to create EC2 instances)
 
 ## Creates the following on AWS
 - VPC
