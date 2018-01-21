@@ -327,6 +327,12 @@
                     },
                     {
                         "IpProtocol": "tcp",
+                        "FromPort": "1194",
+                        "ToPort": "1194",
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
                         "FromPort": "9200",
                         "ToPort": "9200",
                         "CidrIp": "10.0.0.0/16"
@@ -508,7 +514,7 @@
               "IpProtocol": "tcp",
               "FromPort": "22",
               "ToPort": "22",
-              "CidrIp": "10.0.1.0/24"
+              "CidrIp": "10.0.0.0/16"
             },
             {
               "IpProtocol": "udp",
