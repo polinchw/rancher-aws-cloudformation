@@ -165,8 +165,8 @@
           "sudo openssl req -x509 -nodes -subj \"/C=US/ST=GA/L=Atlanta/O=BPE/CN=rancher-dev.bpe.com\" -new -newkey rsa:4096 -keyout rancher.key -out rancher.crt -days 365\n",
           "cd /home/ubuntu\n",
           "git clone https://github.com/polinchw/rancher-ssl.git\n",
-          "git checkout preview\n",
           "cd /home/ubuntu/rancher-ssl\n",
+          "git checkout preview\n",
           "docker-compose build\n",
           "docker-compose up -d\n"
         ]]}},
